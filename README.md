@@ -17,3 +17,25 @@ it, and in the meantime, there may be routing loops.
 5. Changes in network topology are not reflected quickly since updates are spread node-bynode.
 6. When a negative cycle is present, the weights of the vertices keeps on decreasing even when
 relaxation has occurred |V|-1 times and the algorithm continues forever.
+
+
+Improvements:
+
+1. When no negative edges are present Dijkstra’s approach can be used to reduce the time
+complexity to O(V+E).
+2. If an iteration of the main loop of the algorithm terminates without making any changes, the
+algorithm can be immediately terminated, as subsequent iterations will not make any more
+changes. With this early termination condition, the main loop may in some cases use many
+fewer than |V| − 1 iterations (even though the worst case of the algorithm remains
+unchanged).
+3. The standard Bellman-Ford algorithm reports shortest path only if there are no negative
+weight cycles as the algorithm continues forever if there is a negative cycle. To avoid this, it
+is possible to create a counter that stores how many times a vertex has been relaxed and stop
+the algorithm as soon as some vertex got relaxed for the V-th time, so that it reports minimum
+distances even if there is a negative weight cycle.
+4. We can reduce the number of relaxation steps that need to be performed within each
+iteration of the algorithm. If a vertex v has a distance value that has not changed since the
+last time the edges out of v were relaxed, then there is no need to relax the edges out of v a
+second time. In this way, as the number of vertices with correct distance values grows, the 
+number whose outgoing edges that need to be relaxed in each iteration shrinks, leading to a
+constant-factor savings in time for dense graphs.
