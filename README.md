@@ -19,7 +19,7 @@ it, and in the meantime, there may be routing loops.
 relaxation has occurred |V|-1 times and the algorithm continues forever.
 
 
-Improvements:
+Suggestive Improvements:
 
 1. When no negative edges are present Dijkstra’s approach can be used to reduce the time
 complexity to O(V+E).
