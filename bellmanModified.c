@@ -1,6 +1,23 @@
+/* 
+
+Bellman Ford algorithm helps us find the shortest path from a vertex to all other
+vertices of a weighted graph. It is similar to Dijkstra's algorithm but it can work with
+graphs in which edges can have negative weights.
+
+Though it is slower than Dijkstra's algorithm,
+Bellman-Ford is capable of handling graphs that contain negative edge weights, so
+it is more versatile. It is worth noting that if there exists a negative cycle in the
+graph, then there is no shortest path. Going around the negative cycle an infinite
+number of times would continue to decrease the cost of the path (even though the
+path length is increasing). Because of this, Bellman Ford can also be used to detect
+negative cycles which is a useful feature.
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #define INT_MAX +2147483647
+
 void BellmanFord(int graph[][3], int V, int E, int src)
 {
     int c;
@@ -26,7 +43,24 @@ void BellmanFord(int graph[][3], int V, int E, int src)
             break;
     }
 
+/* 
+
+Using Bellman-Ford algorithm, we can detect if there is a negative cycle in our
+graph. We know that, to find out the shortest path, we need to relax all the edges
+of the graph (V-1) times, where V is the number of vertices in a graph.
+
+If there is a negative cycle in a graph, even after (V-1) iterations, we can update d[].
+This happens because for every iteration, traversing through the negative cycle
+always decreases the cost of the shortest path. This is why Bellman Ford algorithm
+limits the number of iterations to (V-1). If we used Dijkstra's Algorithm here, we'd
+be stuck in an endless loop.
+
+*/    
+    
+    
     // Implementation of the negative cycle rule
+    
+    
     for (i = 0; i < E; i++)
     {
         int x = graph[i][0];
