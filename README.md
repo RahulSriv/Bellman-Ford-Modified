@@ -1,7 +1,7 @@
 # Modified Bellman-Ford Algorithm
 Bellman Ford algorithm helps us find the shortest path from a vertex to all other vertices of a weighted graph but the algorithm doesn't work well with negative cycles as the weights of the vertices keeps on decreasing even when relaxation has occurred. So here the modified version is presented overcoming this drawback.
 
-Working:
+##Working:
 
 Like other Dynamic Programming Problems, the algorithm calculates shortest paths in a bottomup manner. 
 It first calculates the shortest distances which have at most one edge in the path.
@@ -13,7 +13,7 @@ most i edges, then an iteration over all edges guarantees to give shortest path 
 edge.
 
 
-Drawbacks of Bellman Ford Algorithm:
+##Drawbacks of Bellman Ford Algorithm:
 
 1. When no negative weights are present in the graph Bellman Ford has very high time
 complexity as it runs in O(VE) time, where V and E are the number of vertices and edges
@@ -31,7 +31,7 @@ it, and in the meantime, there may be routing loops.
 relaxation has occurred |V|-1 times and the algorithm continues forever.
 
 
-Suggestive Improvements:
+##Suggestive Improvements:
 
 1. When no negative edges are present Dijkstra’s approach can be used to reduce the time
 complexity to O(V+E).
