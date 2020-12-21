@@ -13,7 +13,7 @@ most i edges, then an iteration over all edges guarantees to give shortest path 
 edge.
 
 
-## Drawbacks of Bellman Ford Algorithm:
+## Drawbacks of Bellman Ford Algorithm
 
 1. When no negative weights are present in the graph Bellman Ford has very high time
 complexity as it runs in O(VE) time, where V and E are the number of vertices and edges
