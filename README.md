@@ -50,4 +50,4 @@ iteration of the algorithm. If a vertex v has a distance value that has not chan
 last time the edges out of v were relaxed, then there is no need to relax the edges out of v a
 second time. In this way, as the number of vertices with correct distance values grows, the 
 number whose outgoing edges that need to be relaxed in each iteration shrinks, leading to a
-constant-factor savings in time for dense graphs.
+constant factor savings in time for dense graphs.
