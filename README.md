@@ -45,8 +45,8 @@ weight cycles as the algorithm continues forever if there is a negative cycle. T
 is possible to create a counter that stores how many times a vertex has been relaxed and stop
 the algorithm as soon as some vertex got relaxed for the V-th time, so that it reports minimum
 distances even if there is a negative weight cycle.
-4. We can reduce the number of relaxation steps that need to be performed within each
-iteration of the algorithm. If a vertex v has a distance value that has not changed since the
+4. The number of relaxation steps that need to be performed within each
+iteration of the algorithm can be reduced. If a vertex v has a distance value that has not changed since the
 last time the edges out of v were relaxed, then there is no need to relax the edges out of v a
 second time. In this way, as the number of vertices with correct distance values grows, the 
 number whose outgoing edges that need to be relaxed in each iteration shrinks, leading to a
