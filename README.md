@@ -17,7 +17,7 @@ edge.
 
 1. When no negative weights are present in the graph Bellman Ford has very high time
 complexity as it runs in O(VE) time, where V and E are the number of vertices and edges
-respectively. ]
+respectively.
 2. The approach becomes even slower when a large number of vertices are present in the graph
 as in this algorithm each vertex is visited more than once making it infeasible.
 3. When an iteration of the main loop of the algorithm terminates without making any changes,
